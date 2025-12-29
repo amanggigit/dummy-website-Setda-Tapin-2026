@@ -62,7 +62,69 @@
             padding: 0 20px;
         }
 
-        /* --- TABLE DATA STYLE --- */
+        /* --- THUMBNAIL PROFILE STYLE (BARU) --- */
+        .profile-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+
+        .profile-thumb-link {
+            background: var(--white);
+            padding: 30px 20px;
+            border-radius: var(--border-radius);
+            text-align: center;
+            box-shadow: var(--shadow);
+            display: block; /* Agar seluruh area bisa diklik */
+            border-top: 4px solid transparent;
+            transition: var(--transition);
+        }
+
+        .profile-thumb-link:hover {
+            transform: translateY(-5px);
+            border-top-color: var(--secondary-color);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+        }
+
+        .profile-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+            border: 3px solid #eee;
+            transition: var(--transition);
+        }
+
+        .profile-thumb-link:hover .profile-img {
+            border-color: var(--secondary-color);
+        }
+
+        .profile-name {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+            color: var(--primary-color);
+            line-height: 1.3;
+        }
+
+        .profile-role {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            font-weight: 500;
+            line-height: 1.4;
+        }
+        
+        .profile-nip {
+            font-size: 0.75rem;
+            color: #999;
+            font-family: monospace;
+            margin-top: 8px;
+            display: block;
+        }
+
+        /* --- TABLE DATA STYLE (Digunakan untuk Dokumen & Layanan) --- */
         .table-responsive {
             overflow-x: auto;
             margin-bottom: 20px;
@@ -354,7 +416,7 @@
             color: var(--primary-color);
         }
 
-        /* --- BIDANG & BAGIAN (ASISTEN) --- */
+        /* --- BIDANG & BAGIAN --- */
         .bidang-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -542,6 +604,16 @@
             .header-main {
                 flex-wrap: wrap;
             }
+            
+            .profile-grid {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Grid lebih kecil di mobile */
+                gap: 15px;
+            }
+            
+            .profile-img {
+                width: 80px;
+                height: 80px;
+            }
         }
     </style>
 </head>
@@ -581,7 +653,6 @@
                 <ul class="nav-list">
                     <li><a href="#beranda" class="active">Beranda</a></li>
                     <li><a href="#profil">Profil</a></li>
-                    <!-- Menu di sini tetap merujuk ke section bidang -->
                     <li><a href="#bidang">Asisten & Bagian</a></li>
                     <li><a href="#layanan">Layanan</a></li>
                     <li><a href="#e-setda">E-SETDA</a></li>
@@ -657,7 +728,7 @@
         </div>
     </section>
 
-    <!-- PROFIL (Tabel Pegawai) -->
+    <!-- PROFIL (UPDATE: THUMBNAIL LINKS) -->
     <section id="profil" style="background-color: var(--white);">
         <div class="container">
             <div class="section-title">
@@ -666,7 +737,7 @@
             </div>
             
             <!-- 1. Tentang & Visi Misi -->
-            <div style="display: flex; gap: 40px; align-items: center; flex-wrap: wrap; margin-bottom: 40px;">
+            <div style="display: flex; gap: 40px; align-items: center; flex-wrap: wrap; margin-bottom: 60px;">
                 <div style="flex: 1; min-width: 300px;">
                     <img src="https://picsum.photos/seed/sekda/600/400" alt="Sekda" style="width: 100%; border-radius: var(--border-radius); box-shadow: var(--shadow);">
                 </div>
@@ -680,101 +751,126 @@
                 </div>
             </div>
 
-            <!-- 2. Struktur Organisasi -->
+            <!-- 2. Struktur Organisasi & Pejabat (THUMBNAIL LINK) -->
             <h3 class="profile-subsection-title">
                 <i class="fas fa-sitemap"></i> Struktur Organisasi & Pejabat
             </h3>
-            <div class="table-responsive">
-                <table class="data-table">
-                    <thead>
-                        <tr>
-                            <th style="width: 5%">No</th>
-                            <th style="width: 30%">Jabatan</th>
-                            <th style="width: 25%">Nama Pejabat</th>
-                            <th style="width: 25%">NIP</th>
-                            <th style="width: 15%">Pangkat / Gol</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td><strong>Sekretaris Daerah</strong></td>
-                            <td>Drs. H. Muhammad Arsyad, M.Si</td>
-                            <td class="nip-text">19700515 199503 1 002</td>
-                            <td>Pembina Utama / IV/e</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Asisten Pemerintahan & Kesra</td>
-                            <td>Dr. Hj. Siti Aminah, M.Pd</td>
-                            <td class="nip-text">19680720 199203 2 005</td>
-                            <td>Pembina Tingkat I / IV/d</td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>Asisten Perekonomian & Pembangunan</td>
-                            <td>Ir. H. Budi Santoso, MM</td>
-                            <td class="nip-text">19710210 199501 1 001</td>
-                            <td>Pembina Utama Madya / IV/d</td>
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                            <td>Asisten Administrasi Umum</td>
-                            <td>H. Ahmad Fauzi, SE, M.Si</td>
-                            <td class="nip-text">19750912 200112 1 003</td>
-                            <td>Pembina Utama Madya / IV/d</td>
-                        </tr>
-                    </tbody>
-                </table>
+            <p style="margin-bottom: 20px; color: var(--text-light);">Klik pada profil untuk melihat detail lebih lanjut.</p>
+            
+            <div class="profile-grid">
+                <!-- Pejabat 1 -->
+                <a href="#" class="profile-thumb-link">
+                    <img src="https://picsum.photos/seed/sekda1/200/200" alt="Sekda" class="profile-img">
+                    <h4 class="profile-name">Drs. H. Muhammad Arsyad, M.Si</h4>
+                    <p class="profile-role">Sekretaris Daerah</p>
+                    <span class="profile-nip">NIP. 19700515...</span>
+                </a>
+                
+                <!-- Pejabat 2 -->
+                <a href="#" class="profile-thumb-link">
+                    <img src="https://picsum.photos/seed/asma/200/200" alt="Asisten 1" class="profile-img">
+                    <h4 class="profile-name">Dr. Hj. Siti Aminah, M.Pd</h4>
+                    <p class="profile-role">Asisten Pemerintahan & Kesra</p>
+                    <span class="profile-nip">NIP. 19680720...</span>
+                </a>
+
+                <!-- Pejabat 3 -->
+                <a href="#" class="profile-thumb-link">
+                    <img src="https://picsum.photos/seed/asbi/200/200" alt="Asisten 2" class="profile-img">
+                    <h4 class="profile-name">Ir. H. Budi Santoso, MM</h4>
+                    <p class="profile-role">Asisten Perekonomian & Pembangunan</p>
+                    <span class="profile-nip">NIP. 19710210...</span>
+                </a>
+
+                <!-- Pejabat 4 -->
+                <a href="#" class="profile-thumb-link">
+                    <img src="https://picsum.photos/seed/asu/200/200" alt="Asisten 3" class="profile-img">
+                    <h4 class="profile-name">H. Ahmad Fauzi, SE, M.Si</h4>
+                    <p class="profile-role">Asisten Administrasi Umum</p>
+                    <span class="profile-nip">NIP. 19750912...</span>
+                </a>
+
+                <!-- Pejabat 5 -->
+                <a href="#" class="profile-thumb-link">
+                    <img src="https://picsum.photos/seed/kabag/200/200" alt="Kabag Umum" class="profile-img">
+                    <h4 class="profile-name">Andi Pratama, S.Sos</h4>
+                    <p class="profile-role">Kepala Bagian Umum</p>
+                    <span class="profile-nip">NIP. 19850505...</span>
+                </a>
+                
+                <!-- Pejabat 6 -->
+                <a href="#" class="profile-thumb-link">
+                    <img src="https://picsum.photos/seed/kabag2/200/200" alt="Kabag Org" class="profile-img">
+                    <h4 class="profile-name">Rina Wati, STP, M.Si</h4>
+                    <p class="profile-role">Kepala Bagian Organisasi</p>
+                    <span class="profile-nip">NIP. 19880101...</span>
+                </a>
             </div>
 
-            <!-- 3. Daftar Pegawai (Staf) -->
+            <!-- 3. Daftar Pegawai / Staf (THUMBNAIL LINK) -->
             <h3 class="profile-subsection-title">
                 <i class="fas fa-users"></i> Daftar Pegawai / Staf
             </h3>
-            <div class="table-responsive">
-                <table class="data-table">
-                    <thead>
-                        <tr>
-                            <th style="width: 5%">No</th>
-                            <th style="width: 35%">Nama Pegawai</th>
-                            <th style="width: 25%">NIP</th>
-                            <th style="width: 20%">Jabatan</th>
-                            <th style="width: 15%">Pangkat / Gol</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Susilo Bambang</td>
-                            <td class="nip-text">19900101 202001 1 001</td>
-                            <td>Pranata Komputer Ahli Muda</td>
-                            <td>Penata Muda / III/a</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Dewi Sartika</td>
-                            <td class="nip-text">19920520 201902 2 003</td>
-                            <td>Arsiparis Pelaksana</td>
-                            <td>Pengatur / II/c</td>
-                        </tr>
-                    </tbody>
-                </table>
+            <p style="margin-bottom: 20px; color: var(--text-light);">Direktori pegawai pelaksana dan fungsional.</p>
+
+            <div class="profile-grid">
+                <!-- Staf 1 -->
+                <a href="#" class="profile-thumb-link">
+                    <img src="https://picsum.photos/seed/staff1/200/200" alt="Staf" class="profile-img">
+                    <h4 class="profile-name" style="font-size: 1rem;">Susilo Bambang</h4>
+                    <p class="profile-role" style="font-size: 0.8rem;">Pranata Komputer Ahli Muda</p>
+                </a>
+
+                <!-- Staf 2 -->
+                <a href="#" class="profile-thumb-link">
+                    <img src="https://picsum.photos/seed/staff2/200/200" alt="Staf" class="profile-img">
+                    <h4 class="profile-name" style="font-size: 1rem;">Dewi Sartika</h4>
+                    <p class="profile-role" style="font-size: 0.8rem;">Arsiparis Pelaksana</p>
+                </a>
+
+                <!-- Staf 3 -->
+                <a href="#" class="profile-thumb-link">
+                    <img src="https://picsum.photos/seed/staff3/200/200" alt="Staf" class="profile-img">
+                    <h4 class="profile-name" style="font-size: 1rem;">Rahmat Hidayat</h4>
+                    <p class="profile-role" style="font-size: 0.8rem;">Analisis Kebijakan</p>
+                </a>
+
+                <!-- Staf 4 -->
+                <a href="#" class="profile-thumb-link">
+                    <img src="https://picsum.photos/seed/staff4/200/200" alt="Staf" class="profile-img">
+                    <h4 class="profile-name" style="font-size: 1rem;">Mellyana Putri</h4>
+                    <p class="profile-role" style="font-size: 0.8rem;">Perencana</p>
+                </a>
+
+                <!-- Staf 5 -->
+                <a href="#" class="profile-thumb-link">
+                    <img src="https://picsum.photos/seed/staff5/200/200" alt="Staf" class="profile-img">
+                    <h4 class="profile-name" style="font-size: 1rem;">Agus Salim</h4>
+                    <p class="profile-role" style="font-size: 0.8rem;">Verifikator Keuangan</p>
+                </a>
+
+                <!-- Staf 6 -->
+                <a href="#" class="profile-thumb-link">
+                    <img src="https://picsum.photos/seed/staff6/200/200" alt="Staf" class="profile-img">
+                    <h4 class="profile-name" style="font-size: 1rem;">Fitri Handayani</h4>
+                    <p class="profile-role" style="font-size: 0.8rem;">Staf Administrasi Umum</p>
+                </a>
+            </div>
+            <div style="text-align: center; margin-top: 20px;">
+                <a href="#" class="cta-button" style="font-size: 0.9rem;">Lihat Seluruh Pegawai</a>
             </div>
         </div>
     </section>
 
-    <!-- BAGIAN & BIDANG (SEKARANG MENJADI ASISTEN DAN BAGIAN) -->
+    <!-- BAGIAN & BIDANG (ASISTEN DAN BAGIAN) -->
     <section id="bidang">
         <div class="container">
             <div class="section-title">
-                <!-- Judul diubah sesuai permintaan -->
                 <h2>Asisten dan Bagian</h2>
                 <p>Struktur Organisasi Asisten Sekretaris Daerah dan Bagian-bagiannya</p>
             </div>
             
             <div class="bidang-grid">
-                <!-- Asisten 1 -->
                 <div class="bidang-card">
                     <h3><i class="fas fa-users-cog" style="color: var(--secondary-color);"></i> Asisten Pemerintahan & Kesra</h3>
                     <ul>
@@ -782,8 +878,6 @@
                         <li>Bagian Kesejahteraan Rakyat</li>
                     </ul>
                 </div>
-
-                <!-- Asisten 2 -->
                 <div class="bidang-card">
                     <h3><i class="fas fa-chart-line" style="color: var(--secondary-color);"></i> Asisten Perekonomian & Pembangunan</h3>
                     <ul>
@@ -791,16 +885,14 @@
                         <li>Bagian Administrasi Pembangunan</li>
                     </ul>
                 </div>
-
-                <!-- Asisten 3 (DITAMBAH BAGIAN PERLENGKAPAN & BPBJ) -->
                 <div class="bidang-card">
                     <h3><i class="fas fa-building" style="color: var(--secondary-color);"></i> Asisten Administrasi Umum</h3>
                     <ul>
                         <li>Bagian Umum</li>
                         <li>Bagian Organisasi</li>
                         <li>Bagian Protokol & Komunikasi Pimpinan</li>
-                        <li>Bagian Perlengkapan</li> <!-- DITAMBAH -->
-                        <li>Bagian Pengadaan Barang & Jasa (BPBJ)</li> <!-- DITAMBAH -->
+                        <li>Bagian Perlengkapan</li>
+                        <li>Bagian Pengadaan Barang & Jasa (BPBJ)</li>
                     </ul>
                 </div>
             </div>
