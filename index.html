@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
@@ -6,7 +6,7 @@
     <title>Sekretariat Daerah Kabupaten Tapin - Official Website</title>
     <!-- Menggunakan Font Google: Roboto (Modern & Resmi) -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
-    <!-- Ikon FontAwesome (Versi CDN untuk demo) -->
+    <!-- Ikon FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
@@ -14,7 +14,7 @@
         :root {
             --primary-color: #003366; /* Biru Tua Pemerintah */
             --secondary-color: #D4AF37; /* Emas Elegan */
-            --accent-color: #00509E; /* Biru Terang untuk Hover */
+            --accent-color: #00509E;
             --text-dark: #333333;
             --text-light: #666666;
             --bg-light: #F4F7F6;
@@ -42,7 +42,7 @@
         }
 
         h1, h2, h3, h4, h5, h6 {
-            font-family: 'Merriweather', serif; /* Font Serif untuk judul agar lebih berwibawa */
+            font-family: 'Merriweather', serif;
             color: var(--primary-color);
         }
 
@@ -60,6 +60,60 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
+        }
+
+        /* --- TABLE DATA STYLE (BARU) --- */
+        .table-responsive {
+            overflow-x: auto;
+            margin-bottom: 20px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: var(--white);
+            font-size: 0.9rem;
+            min-width: 600px; /* Agar tabel tidak gepeng di HP */
+        }
+
+        .data-table thead {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+
+        .data-table th, .data-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        .data-table th {
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
+        }
+
+        .data-table tr:hover {
+            background-color: #f9f9f9;
+        }
+
+        .nip-text {
+            font-family: monospace;
+            color: var(--text-light);
+            font-size: 0.85rem;
+        }
+
+        .profile-subsection-title {
+            margin-top: 40px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--secondary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
         /* --- HEADER & NAVIGASI --- */
@@ -126,7 +180,6 @@
             font-weight: 400;
         }
 
-        /* Mobile Menu Button */
         .menu-toggle {
             display: none;
             font-size: 1.5rem;
@@ -134,14 +187,13 @@
             cursor: pointer;
         }
 
-        /* Navigation */
         .nav-menu {
             background-color: var(--primary-color);
         }
 
         .nav-list {
             display: flex;
-            overflow-x: auto; /* Agar bisa discroll di mobile jika perlu */
+            overflow-x: auto;
             white-space: nowrap;
         }
 
@@ -236,7 +288,7 @@
             margin: 10px auto 0;
         }
 
-        /* --- BERITA & AGENDA (Split Layout) --- */
+        /* --- BERITA & AGENDA --- */
         .news-agenda-grid {
             display: grid;
             grid-template-columns: 2fr 1fr;
@@ -338,7 +390,7 @@
             font-weight: bold;
         }
 
-        /* --- LAYANAN & E-SETDA --- */
+        /* --- LAYANAN --- */
         .bg-blue {
             background-color: #eef4fa;
         }
@@ -390,32 +442,6 @@
         .cta-button:hover {
             background-color: var(--primary-color);
             color: var(--white);
-        }
-
-        /* --- DOKUMEN --- */
-        .doc-table {
-            width: 100%;
-            border-collapse: collapse;
-            background: var(--white);
-            box-shadow: var(--shadow);
-            border-radius: var(--border-radius);
-            overflow: hidden;
-        }
-
-        .doc-table th, .doc-table td {
-            padding: 15px;
-            text-align: left;
-            border-bottom: 1px solid #eee;
-        }
-
-        .doc-table th {
-            background-color: var(--primary-color);
-            color: var(--white);
-        }
-
-        .download-btn {
-            color: var(--primary-color);
-            font-weight: bold;
         }
 
         /* --- ZONA ASN --- */
@@ -491,7 +517,7 @@
             }
 
             .nav-menu {
-                display: none; /* Disembunyikan secara default di mobile */
+                display: none;
             }
 
             .nav-menu.active {
@@ -540,7 +566,6 @@
     <header>
         <div class="container header-main">
             <div class="logo-area">
-                <!-- Placeholder Logo -->
                 <img src="https://picsum.photos/seed/logo/50/50" alt="Logo Tapin" class="logo-img">
                 <div class="logo-text">
                     <h1>Sekretariat Daerah</h1>
@@ -571,9 +596,8 @@
     <section id="beranda" class="hero">
         <div class="container">
             <h2>Melayani dengan Integritas dan Profesionalisme</h2>
-            <p>Selamat datang di Website Resmi Sekretariat Daerah Kabupaten Tapin. Pusat informasi administrasi, koordinasi perencanaan, dan pelayanan publik untuk masyarakat Tapin.</p>
+            <p>Selamat datang di Website Resmi Sekretariat Daerah Kabupaten Tapin. Pusat informasi administrasi, koordinasi perencanaan, dan pelayanan publik.</p>
             
-            <!-- Akses Cepat E-SETDA -->
             <div class="quick-access-grid">
                 <a href="#e-setda" class="quick-btn">
                     <i class="fas fa-laptop-code"></i>
@@ -595,13 +619,11 @@
         </div>
     </section>
 
-    <!-- Berita & Agenda -->
+    <!-- BERITA & AGENDA -->
     <section class="container">
         <div class="news-agenda-grid">
-            <!-- Berita Terkini -->
             <div class="news-section">
                 <h3 style="margin-bottom: 20px; border-left: 5px solid var(--primary-color); padding-left: 10px;">Berita Terkini</h3>
-                
                 <article class="news-card">
                     <img src="https://picsum.photos/seed/news1/300/200" alt="News 1" class="news-img">
                     <div class="news-content">
@@ -609,7 +631,6 @@
                         <a href="#" class="news-title">Rapat Koordinasi Percepatan Pembangunan Akhir Tahun</a>
                     </div>
                 </article>
-
                 <article class="news-card">
                     <img src="https://picsum.photos/seed/news2/300/200" alt="News 2" class="news-img">
                     <div class="news-content">
@@ -617,34 +638,17 @@
                         <a href="#" class="news-title">Sekda Tapin Resmikan Sistem E-Office Baru</a>
                     </div>
                 </article>
-
-                <article class="news-card">
-                    <img src="https://picsum.photos/seed/news3/300/200" alt="News 3" class="news-img">
-                    <div class="news-content">
-                        <div class="news-meta">27 Desember 2025</div>
-                        <a href="#" class="news-title">Sosialisasi Peraturan Bupati Tentang Disiplin ASN</a>
-                    </div>
-                </article>
             </div>
-
-            <!-- Agenda Pimpinan -->
             <aside class="agenda-section">
                 <h3 style="margin-bottom: 20px; border-left: 5px solid var(--secondary-color); padding-left: 10px;">Agenda Pimpinan</h3>
                 <div class="agenda-list">
                     <div class="agenda-item">
                         <div class="agenda-date"><i class="far fa-clock"></i> 30 Des, 09:00 WIB</div>
                         <div class="agenda-title">Upacara Hari Kesadaran Nasional</div>
-                        <div class="agenda-loc" style="font-size:0.8rem; color:#888;">Halaman Kantor Bupati</div>
                     </div>
                     <div class="agenda-item">
                         <div class="agenda-date"><i class="far fa-clock"></i> 02 Jan, 13:00 WIB</div>
                         <div class="agenda-title">Rapat Evaluasi Kinerja OPD</div>
-                        <div class="agenda-loc" style="font-size:0.8rem; color:#888;">Ruang Rapat Setda</div>
-                    </div>
-                    <div class="agenda-item">
-                        <div class="agenda-date"><i class="far fa-clock"></i> 05 Jan, 08:00 WIB</div>
-                        <div class="agenda-title">Penerimaan Tamu Daerah</div>
-                        <div class="agenda-loc" style="font-size:0.8rem; color:#888;">Rumah Dinas Bupati</div>
                     </div>
                 </div>
                 <a href="#" class="cta-button" style="width:100%; text-align:center; font-size:0.9rem;">Lihat Semua Agenda</a>
@@ -652,34 +656,160 @@
         </div>
     </section>
 
-    <!-- Profil Singkat -->
+    <!-- PROFIL (UPDATE DENGAN STRUKTUR & PEGAWAI) -->
     <section id="profil" style="background-color: var(--white);">
         <div class="container">
             <div class="section-title">
                 <h2>Profil Sekretariat Daerah</h2>
-                <p>Mengenal lebih dekat peran, visi, misi, dan struktur organisasi kami.</p>
+                <p>Informasi Lengkap Mengenai Visi, Misi, dan SDM SETDA Tapin</p>
             </div>
-            <div style="display: flex; gap: 40px; align-items: center; flex-wrap: wrap;">
+            
+            <!-- 1. Tentang & Visi Misi -->
+            <div style="display: flex; gap: 40px; align-items: center; flex-wrap: wrap; margin-bottom: 40px;">
                 <div style="flex: 1; min-width: 300px;">
                     <img src="https://picsum.photos/seed/sekda/600/400" alt="Sekda" style="width: 100%; border-radius: var(--border-radius); box-shadow: var(--shadow);">
                 </div>
                 <div style="flex: 1; min-width: 300px;">
                     <h3>Tentang SETDA Tapin</h3>
                     <p style="margin-bottom: 15px;">Sekretariat Daerah merupakan unsur pembantu pimpinan Daerah yang berkedudukan di bawah dan bertanggung jawab kepada Bupati.</p>
-                    
                     <div style="background: #eef4fa; padding: 20px; border-radius: 8px; margin-bottom: 20px;">
                         <h4 style="font-size: 1.1rem; margin-bottom: 10px;">Visi</h4>
                         <p style="font-style: italic;">"Terwujudnya Tapin yang Sejahtera, Mandiri, dan Berdaya Saing melalui Pemerintahan yang Bersih."</p>
                     </div>
-                    
-                    <ul style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
-                        <li><i class="fas fa-check-circle" style="color:var(--primary-color)"></i> Tugas Pokok & Fungsi</li>
-                        <li><i class="fas fa-check-circle" style="color:var(--primary-color)"></i> Struktur Organisasi</li>
-                        <li><i class="fas fa-check-circle" style="color:var(--primary-color)"></i> Profil Sekda</li>
-                        <li><i class="fas fa-check-circle" style="color:var(--primary-color)"></i> Asisten & Bagian</li>
-                    </ul>
                 </div>
             </div>
+
+            <!-- 2. Struktur Organisasi (Pejabat) -->
+            <h3 class="profile-subsection-title">
+                <i class="fas fa-sitemap"></i> Struktur Organisasi & Pejabat
+            </h3>
+            <p style="margin-bottom: 15px; color: var(--text-light);">Daftar pimpinan dan pejabat struktural di lingkungan Sekretariat Daerah.</p>
+            
+            <div class="table-responsive">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 5%">No</th>
+                            <th style="width: 30%">Jabatan</th>
+                            <th style="width: 25%">Nama Pejabat</th>
+                            <th style="width: 25%">NIP</th>
+                            <th style="width: 15%">Pangkat / Gol</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td><strong>Sekretaris Daerah</strong></td>
+                            <td>Drs. H. Muhammad Arsyad, M.Si</td>
+                            <td class="nip-text">19700515 199503 1 002</td>
+                            <td>Pembina Utama / IV/e</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Asisten Pemerintahan & Kesra</td>
+                            <td>Dr. Hj. Siti Aminah, M.Pd</td>
+                            <td class="nip-text">19680720 199203 2 005</td>
+                            <td>Pembina Tingkat I / IV/d</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Asisten Perekonomian & Pembangunan</td>
+                            <td>Ir. H. Budi Santoso, MM</td>
+                            <td class="nip-text">19710210 199501 1 001</td>
+                            <td>Pembina Utama Madya / IV/d</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Asisten Administrasi Umum</td>
+                            <td>H. Ahmad Fauzi, SE, M.Si</td>
+                            <td class="nip-text">19750912 200112 1 003</td>
+                            <td>Pembina Utama Madya / IV/d</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>Kepala Bagian Umum</td>
+                            <td>Andi Pratama, S.Sos</td>
+                            <td class="nip-text">19850505 201001 1 002</td>
+                            <td>Penata Tk. I / III/d</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>Kepala Bagian Organisasi</td>
+                            <td>Rina Wati, STP, M.Si</td>
+                            <td class="nip-text">19880101 201101 2 001</td>
+                            <td>Penata Tk. I / III/d</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- 3. Daftar Pegawai (Staf) -->
+            <h3 class="profile-subsection-title">
+                <i class="fas fa-users"></i> Daftar Pegawai / Staf
+            </h3>
+            <p style="margin-bottom: 15px; color: var(--text-light);">Data pegawai pelaksana di lingkungan Sekretariat Daerah (Data Sampel).</p>
+
+            <div class="table-responsive">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 5%">No</th>
+                            <th style="width: 35%">Nama Pegawai</th>
+                            <th style="width: 25%">NIP</th>
+                            <th style="width: 20%">Jabatan</th>
+                            <th style="width: 15%">Pangkat / Gol</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Susilo Bambang</td>
+                            <td class="nip-text">19900101 202001 1 001</td>
+                            <td>Pranata Komputer Ahli Muda</td>
+                            <td>Penata Muda / III/a</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Dewi Sartika</td>
+                            <td class="nip-text">19920520 201902 2 003</td>
+                            <td>Arsiparis Pelaksana</td>
+                            <td>Pengatur / II/c</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Rahmat Hidayat</td>
+                            <td class="nip-text">19881112 201011 1 004</td>
+                            <td>Analisis Kebijakan</td>
+                            <td>Penata Tk. I / III/d</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Mellyana Putri</td>
+                            <td class="nip-text">19940707 201603 2 005</td>
+                            <td>Perencana</td>
+                            <td>Penata Muda / III/a</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>Agus Salim</td>
+                            <td class="nip-text">19920310 201503 1 002</td>
+                            <td>Verifikator Keuangan</td>
+                            <td>Penata Muda Tk.I / III/b</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>Fitri Handayani</td>
+                            <td class="nip-text">19961212 201903 2 001</td>
+                            <td>Staf Administrasi Umum</td>
+                            <td>Pengatur Tk. I / II/d</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div style="text-align: center; margin-top: 10px;">
+                <a href="#" class="cta-button" style="font-size: 0.9rem;">Lihat Seluruh Pegawai (Data Lengkap)</a>
+            </div>
+
         </div>
     </section>
 
@@ -692,7 +822,6 @@
             </div>
             
             <div class="bidang-grid">
-                <!-- Asisten 1 -->
                 <div class="bidang-card">
                     <h3><i class="fas fa-users-cog" style="color: var(--secondary-color);"></i> Asisten Pemerintahan & Kesra</h3>
                     <ul>
@@ -700,8 +829,6 @@
                         <li>Bagian Kesejahteraan Rakyat</li>
                     </ul>
                 </div>
-
-                <!-- Asisten 2 -->
                 <div class="bidang-card">
                     <h3><i class="fas fa-chart-line" style="color: var(--secondary-color);"></i> Asisten Perekonomian & Pembangunan</h3>
                     <ul>
@@ -709,8 +836,6 @@
                         <li>Bagian Administrasi Pembangunan</li>
                     </ul>
                 </div>
-
-                <!-- Asisten 3 -->
                 <div class="bidang-card">
                     <h3><i class="fas fa-building" style="color: var(--secondary-color);"></i> Asisten Administrasi Umum</h3>
                     <ul>
@@ -788,44 +913,37 @@
         <div class="section-title">
             <h2>Dokumen & Transparansi</h2>
         </div>
-        <table class="doc-table">
-            <thead>
-                <tr>
-                    <th>Nama Dokumen</th>
-                    <th>Kategori</th>
-                    <th>Tahun</th>
-                    <th>Aksi</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Peraturan Bupati tentang Sistem Akuntansi</td>
-                    <td>Peraturan</td>
-                    <td>2024</td>
-                    <td><a href="#" class="download-btn"><i class="fas fa-download"></i> Unduh</a></td>
-                </tr>
-                <tr>
-                    <td>Renstra Sekretariat Daerah 2024-2026</td>
-                    <td>Perencanaan</td>
-                    <td>2024</td>
-                    <td><a href="#" class="download-btn"><i class="fas fa-download"></i> Unduh</a></td>
-                </tr>
-                <tr>
-                    <td>Laporan Kinerja Instansi Pemerintah (LKjIP)</td>
-                    <td>Laporan</td>
-                    <td>2023</td>
-                    <td><a href="#" class="download-btn"><i class="fas fa-download"></i> Unduh</a></td>
-                </tr>
-                <tr>
-                    <td>SOP Pelayanan Persuratan</td>
-                    <td>SOP</td>
-                    <td>-</td>
-                    <td><a href="#" class="download-btn"><i class="fas fa-download"></i> Unduh</a></td>
-                </tr>
-            </tbody>
-        </table>
-        <div style="text-align: center; margin-top: 20px;">
-            <a href="#" style="color: var(--primary-color); font-weight: bold;">Lihat Dokumen Lainnya di PPID <i class="fas fa-arrow-right"></i></a>
+        <div class="table-responsive">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Nama Dokumen</th>
+                        <th>Kategori</th>
+                        <th>Tahun</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Peraturan Bupati tentang Sistem Akuntansi</td>
+                        <td>Peraturan</td>
+                        <td>2024</td>
+                        <td><a href="#" class="download-btn" style="color:var(--primary-color); font-weight:bold;"><i class="fas fa-download"></i> Unduh</a></td>
+                    </tr>
+                    <tr>
+                        <td>Renstra Sekretariat Daerah 2024-2026</td>
+                        <td>Perencanaan</td>
+                        <td>2024</td>
+                        <td><a href="#" class="download-btn" style="color:var(--primary-color); font-weight:bold;"><i class="fas fa-download"></i> Unduh</a></td>
+                    </tr>
+                    <tr>
+                        <td>Laporan Kinerja Instansi Pemerintah (LKjIP)</td>
+                        <td>Laporan</td>
+                        <td>2023</td>
+                        <td><a href="#" class="download-btn" style="color:var(--primary-color); font-weight:bold;"><i class="fas fa-download"></i> Unduh</a></td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </section>
 
@@ -847,18 +965,14 @@
     <footer id="kontak">
         <div class="container">
             <div class="footer-grid">
-                <!-- Kolom 1: Identitas -->
                 <div class="footer-col">
                     <h3>SETDA KAB. TAPIN</h3>
                     <div class="contact-info">
                         <li><i class="fas fa-map-marker-alt"></i> Jl. Brigjend H. Hasan Basry, Rantau, Kabupaten Tapin, Kalimantan Selatan 71111</li>
                         <li><i class="fas fa-phone"></i> (0517) 12345</li>
                         <li><i class="fas fa-envelope"></i> setda@tapinkab.go.id</li>
-                        <li><i class="fas fa-clock"></i> Senin - Jumat: 08:00 - 16:00 WITA</li>
                     </div>
                 </div>
-
-                <!-- Kolom 2: Tautan Cepat -->
                 <div class="footer-col">
                     <h3>Tautan Cepat</h3>
                     <ul class="footer-links">
@@ -868,24 +982,13 @@
                         <li><a href="#dokumen">PPID Utama</a></li>
                     </ul>
                 </div>
-
-                <!-- Kolom 3: Media & Peta -->
                 <div class="footer-col">
                     <h3>Peta Lokasi</h3>
                     <div style="width: 100%; height: 150px; background: #ddd; border-radius: 8px; margin-bottom: 20px; display: flex; align-items: center; justify-content: center; color: #555;">
-                        <!-- Placeholder Google Maps -->
                         <i class="fas fa-map"></i> &nbsp; Google Maps Placeholder
-                    </div>
-                    <h3>Media Sosial</h3>
-                    <div class="top-social" style="margin-top: 10px;">
-                        <a href="#" style="color: #ccc;"><i class="fab fa-facebook-f fa-lg"></i></a>
-                        <a href="#" style="color: #ccc;"><i class="fab fa-instagram fa-lg"></i></a>
-                        <a href="#" style="color: #ccc;"><i class="fab fa-youtube fa-lg"></i></a>
-                        <a href="#" style="color: #ccc;"><i class="fab fa-twitter fa-lg"></i></a>
                     </div>
                 </div>
             </div>
-            
             <div class="footer-bottom">
                 <p>&copy; 2025 Sekretariat Daerah Kabupaten Tapin. Hak Cipta Dilindungi.</p>
             </div>
@@ -898,8 +1001,6 @@
             const nav = document.getElementById('navMenu');
             nav.classList.toggle('active');
         }
-
-        // Menutup menu saat link diklik (untuk mobile)
         document.querySelectorAll('.nav-list li a').forEach(link => {
             link.addEventListener('click', () => {
                 const nav = document.getElementById('navMenu');
